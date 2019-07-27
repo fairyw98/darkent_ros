@@ -10,7 +10,7 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg)
   try
   {
    cv::imshow("view", cv_bridge::toCvShare(msg, "bgr8")->image);
-   cv::imwrite("/home/fairy/catkin_workspace/src/darknet_ros/darknet_ros/src/results.jpg", cv_bridge::toCvShare(msg, "bgr8")->image);
+   cv::imwrite("results.jpg", cv_bridge::toCvShare(msg, "bgr8")->image);
    cvWaitKey(10);
  
   }
