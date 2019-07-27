@@ -54,13 +54,12 @@ image_view:
   enable_opencv: true
   wait_key_delay: 1
 ```
-
-然后下载本项目的代码
-
+下载本项目的代码
 ```
-cd /home/YOURNAME/catkin_ws/src/darknet_ros/darknet_ros/src
-git clone ...
+cd /home/YOURNAME/catkin_ws/src/darknet_ros/darknet_ros
+git clone https://github.com/fearywang/darkent_ros.git
 ```
+把cpp文件移动到src文件夹下，把CMakeLists.txt文件放到本文件夹下，把launch文件放到launch文件夹下
 然后把start.launch 移动到上一级目录的launch文件夹中
 最后编译，运行
 ```
