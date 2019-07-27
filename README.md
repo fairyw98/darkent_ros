@@ -2,7 +2,7 @@
 参考  https://github.com/leggedrobotics/darknet_ros
 
 ```
-mkdir -p catkin_ws/src//如果已经有工作区间可以忽略这一步，直接进入src
+mkdir -p catkin_ws/src   ::如果已经有工作区间可以忽略这一步，直接进入src
 cd catkin_ws/src
 git clone --recursive https://github.com/leggedrobotics/darknet_ros.git
 cd ..
@@ -15,8 +15,7 @@ catkin_make -DCMAKE_BUILD_TYPE=Release
 
 
 ```
-gedit catkin_workspace/src/darknet_ros/darknet_ros/config/ros.yaml
-
+gedit catkin_ws/src/darknet_ros/darknet_ros/config/ros.yaml
 ```
 
 
@@ -67,3 +66,4 @@ roslaunch darknet_ros yolo_v3.launch
 roslaunch usb_cam usb_cam-test.launch 
 roslaunch darknet_ros start.launch 
 ```
+等待几分钟后，按下空格便会拍照，并分析这张图片，/home/YOURNAME/catkin_ws/src/darknet_ros/darknet_ros/src下会出现一张照片
