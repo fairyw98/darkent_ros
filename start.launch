@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+    <node pkg="darknet_ros" name="sub1" type="sub1"/>
+    <node pkg="darknet_ros" name="image_sub" type="image_sub"/>
+    <node pkg="darknet_ros" name="getImage" type="getImage"/>
+</launch>
