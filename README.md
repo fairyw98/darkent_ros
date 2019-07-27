@@ -2,13 +2,7 @@
 参考  https://github.com/leggedrobotics/darknet_ros
 
 ```
-mkdir -p catkin_ws/src   <!--如果已经有工作区间可以忽略这一步，直接进入src-->
-
-
-作者：CandyBullet
-链接：https://www.imooc.com/article/23400
-来源：慕课网
-
+mkdir -p catkin_ws/src
 cd catkin_ws/src
 git clone --recursive https://github.com/leggedrobotics/darknet_ros.git
 cd ..
@@ -23,7 +17,7 @@ catkin_make -DCMAKE_BUILD_TYPE=Release
 ```
 gedit catkin_ws/src/darknet_ros/darknet_ros/config/ros.yaml
 ```
-
+改成下面这样
 
 ```
 subscribers:
