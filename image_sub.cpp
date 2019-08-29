@@ -5,19 +5,10 @@
 #include <opencv2/opencv.hpp>
  
 //cv::Mat image;
-void imageCallback(const sensor_msgs::ImageConstPtr& msg)
+void imgCallback(const sensor_msgs::ImageConstPtr& msg)
 {
-  try
-  {
-   cv::imshow("view", cv_bridge::toCvShare(msg, "bgr8")->image);
    cv::imwrite("results.jpg", cv_bridge::toCvShare(msg, "bgr8")->image);
    cvWaitKey(10);
- 
-  }
-  catch (cv_bridge::Exception& e)
-  {
-    ROS_ERROR("Could not convert from '%s' to 'bgr8'.", msg->encoding.c_str());
-  }
 }
  
 int main(int argc, char **argv)
@@ -27,8 +18,7 @@ int main(int argc, char **argv)
   cv::namedWindow("view", 0);
   cv::startWindowThread();
   image_transport::ImageTransport it(nh);
-  image_transport::Subscriber sub = it.subscribe("/darknet_ros/detection_image", 1, imageCallback);
-   
+  image_transport::Subscriber sub = it.subscribe("/darknet_ros/detection_image", 1, imgCallback);
    
   ros::spin();
   cv::destroyWindow("view");
